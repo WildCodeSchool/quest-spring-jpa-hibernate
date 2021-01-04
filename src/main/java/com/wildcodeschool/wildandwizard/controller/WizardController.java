@@ -38,13 +38,11 @@ public class WizardController {
             }
         }
         model.addAttribute("wizard", wizard);
-
         return "wizard";
     }
 
     @PostMapping("/wizard")
     public String postWizard(@ModelAttribute Wizard wizard) {
-
         repository.save(wizard);
         return "redirect:/wizards";
     }
