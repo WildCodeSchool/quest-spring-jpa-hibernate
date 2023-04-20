@@ -1,46 +1,59 @@
 package com.wildcodeschool.wildandwizard.entity;
 
-// TODO : update this entity
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class School {
 
-    private Long id;
-    private String name;
-    private Long capacity;
-    private String country;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public School() {
-    }
+  private String name;
+  private Long capacity;
+  private String country;
 
-    public Long getId() {
-        return id;
-    }
+  public School() {}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public School(Long id, String name, Long capacity, String country) {
+    this.id = id;
+    this.name = name;
+    this.capacity = capacity;
+    this.country = country;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public Long getCapacity() {
-        return capacity;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setCapacity(Long capacity) {
-        this.capacity = capacity;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getCountry() {
-        return country;
-    }
+  public Long getCapacity() {
+    return capacity;
+  }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
+  public void setCapacity(Long capacity) {
+    this.capacity = capacity;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
 }
